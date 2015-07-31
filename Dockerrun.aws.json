@@ -1,0 +1,23 @@
+{
+    "AWSEBDockerrunVersion": "2",
+    "volumes": [{
+        "name": "mongo-data",
+        "host": {
+            "sourcePath": "/var/app/mongodb"
+        }
+    }],
+    "containerDefinitions": [{
+        "name": "guesttoguest-mongolog",
+        "image": "guesttoguest/mongodb:latest",
+        "essential": true,
+        "memory": 128,
+        "portMappings": [{
+            "hostPort": 27017,
+            "containerPort": 27017
+        }],
+        "mountPoints": [{
+            "sourceVolume": "mongo-data",
+            "containerPath": "/data/db"
+        }]
+    }]
+}
