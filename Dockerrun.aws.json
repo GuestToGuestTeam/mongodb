@@ -8,7 +8,7 @@
     }],
     "containerDefinitions": [{
         "name": "guesttoguest-mongolog",
-        "image": "guesttoguest/mongodb:latest",
+        "image": "guesttoguest/mongodb:v1.0.0",
         "essential": true,
         "memory": 128,
         "portMappings": [{
